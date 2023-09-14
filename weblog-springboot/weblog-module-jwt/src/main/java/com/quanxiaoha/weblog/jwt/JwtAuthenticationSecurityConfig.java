@@ -13,10 +13,9 @@ import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
+ * @author: lcq
+ * @url: www.lingcq.online
  * @date: 2023-04-18 19:29
- * @description: TODO
  **/
 @Configuration
 public class JwtAuthenticationSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {

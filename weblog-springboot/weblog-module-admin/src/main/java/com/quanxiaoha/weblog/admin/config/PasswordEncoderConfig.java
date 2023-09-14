@@ -6,8 +6,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
+ * @author: lcq
+ * @url: www.lingcq.online
  * @date: 2023-04-19 17:31
  * @description: 密码加密
  **/

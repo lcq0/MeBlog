@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
+ * @author: lcq
+ * @url: www.lingcq.online
  * @date: 2023-04-18 16:30
  * @description: 登录认证失败后处理
  **/

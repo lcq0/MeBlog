@@ -16,8 +16,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
+ * @author: lcq
+ * @url: www.lingcq.online
  * @date: 2023-05-11 9:02
  * @description: TODO
  **/

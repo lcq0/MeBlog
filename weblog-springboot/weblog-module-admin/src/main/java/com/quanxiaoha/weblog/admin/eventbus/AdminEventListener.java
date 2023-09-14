@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
+ * @author: lcq
+ * @url: www.lingcq.online
  * @date: 2023-07-01 21:35
  * @description: 事件监听
  **/

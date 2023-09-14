@@ -5,8 +5,8 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
+ * @author: lcq
+ * @url: www.lingcq.online
  * @date: 2023-07-01 16:37
  * @description: 全局静态变量
  **/

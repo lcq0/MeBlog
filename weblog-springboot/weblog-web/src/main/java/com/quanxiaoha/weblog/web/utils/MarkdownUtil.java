@@ -38,7 +38,7 @@ public class MarkdownUtil {
     private final static Parser parser;
     private final static HtmlRenderer renderer;
 
-    private static final String SITE_NAME = "www.quanxiaoha.com";
+    private static final String SITE_NAME = "www.lingcq.online";
 
     static {
         // 定制 markdown 选项

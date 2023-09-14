@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.extension.injector.methods.InsertBatchSomeColumn
 import java.util.List;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
+ * @author: lcq
+ * @url: www.lingcq.online
  * @date: 2023-06-13 22:46
  * @description: TODO
  **/
