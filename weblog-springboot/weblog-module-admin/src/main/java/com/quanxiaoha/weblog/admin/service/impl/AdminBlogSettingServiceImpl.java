@@ -9,8 +9,8 @@ import com.quanxiaoha.weblog.common.Response;
 import com.quanxiaoha.weblog.common.domain.mapper.BlogSettingMapper;
 import com.quanxiaoha.weblog.common.domain.dos.BlogSettingDO;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.Authentication;
+//import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -64,8 +64,9 @@ public class AdminBlogSettingServiceImpl extends ServiceImpl<BlogSettingMapper, 
 
     @Override
     public Response<QueryUserDetailRspVO> queryNicknameAndAvatar() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String username = authentication.getName();
+        String username = "test";
 
         QueryUserDetailRspVO queryBlogSettingRspVO = QueryUserDetailRspVO.builder().username(username).build();
 

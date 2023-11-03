@@ -5,6 +5,7 @@ import com.quanxiaoha.weblog.admin.service.AdminBlogSettingService;
 import com.quanxiaoha.weblog.admin.service.AdminDashboardService;
 import com.quanxiaoha.weblog.common.Response;
 import com.quanxiaoha.weblog.common.aspect.ApiOperationLog;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2023-04-19 16:06
  * @description: 后台首页 - 仪表盘
  **/
+@Api(tags = "admin仪表盘模块")
 @RestController
 @RequestMapping("/admin/dashboard")
 public class AdminDashboardController {

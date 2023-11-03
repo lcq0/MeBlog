@@ -7,8 +7,9 @@ import com.quanxiaoha.weblog.admin.service.AdminCategoryService;
 import com.quanxiaoha.weblog.common.PageResponse;
 import com.quanxiaoha.weblog.common.Response;
 import com.quanxiaoha.weblog.common.aspect.ApiOperationLog;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2023-04-19 16:06
  * @description: TODO
  **/
+@Api(tags = "admin分类模块")
 @RestController
 @RequestMapping("/admin/category")
 public class AdminCategoryController {
@@ -30,7 +32,7 @@ public class AdminCategoryController {
 
     @PostMapping("/add")
     @ApiOperationLog(description = "新增分类")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Response addCategory(@RequestBody @Validated AddCategoryReqVO addCategoryReqVO) {
         return categoryService.addCategory(addCategoryReqVO);
     }
@@ -43,7 +45,7 @@ public class AdminCategoryController {
 
     @PostMapping("/delete")
     @ApiOperationLog(description = "删除分类")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Response deleteCategory(@RequestBody @Validated DeleteCategoryReqVO deleteCategoryReqVO) {
         return categoryService.deleteCategory(deleteCategoryReqVO);
     }

@@ -25,9 +25,14 @@
             <artifactId>weblog-module-admin</artifactId>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.quanxiaoha</groupId>
             <artifactId>weblog-module-jwt</artifactId>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.quanxiaoha</groupId>
+            <artifactId>weblog-module-sa-token</artifactId>
         </dependency>
 
         <dependency>

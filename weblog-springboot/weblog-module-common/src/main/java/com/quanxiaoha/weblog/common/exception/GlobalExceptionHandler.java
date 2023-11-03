@@ -1,18 +1,20 @@
 package com.quanxiaoha.weblog.common.exception;
 
+import cn.dev33.satoken.exception.NotLoginException;
+import cn.dev33.satoken.exception.NotPermissionException;
 import com.quanxiaoha.weblog.common.Response;
 import com.quanxiaoha.weblog.common.enums.ResponseCodeEnum;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.context.properties.bind.BindResult;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.core.AuthenticationException;
+//import org.springframework.boot.context.properties.bind.BindResult;
+//import org.springframework.http.HttpStatus;
+//import org.springframework.security.access.AccessDeniedException;
+//import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+//import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
@@ -27,11 +29,11 @@ import java.util.Optional;
 @Slf4j
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler({ AccessDeniedException.class })
+    /*@ExceptionHandler({ AccessDeniedException.class })
     public void throwAccessDeniedException(AccessDeniedException e) throws AccessDeniedException {
         log.info("============= 捕获到 AccessDeniedException");
         throw e;
-    }
+    }*/
 
     /**
      * 业务异常
@@ -55,7 +57,7 @@ public class GlobalExceptionHandler {
         BindingResult result = e.getBindingResult();
         StringBuilder sb = new StringBuilder();
 
-        Optional.ofNullable(result.getFieldErrors()).ifPresent(errors -> {
+        Optional.of(result.getFieldErrors()).ifPresent(errors -> {
             errors.forEach(error -> {
                 sb.append(error.getField())
                         .append(" ")
@@ -84,6 +86,25 @@ public class GlobalExceptionHandler {
     //     log.error("{} request error, ", request.getRequestURI(), e);
     //     return Response.fail(ResponseCodeEnum.UNAUTHORIZED);
     // }
+
+    /**
+     * 权限不够异常
+     * @param request
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(value = NotPermissionException.class)
+    @ResponseBody
+    public Response<Object> notPermissionException(HttpServletRequest request, Exception e){
+        log.error("{} request error, ", request.getRequestURI(), e);
+        return Response.fail(ResponseCodeEnum.NOT_PERMISSION);
+    }
+
+    @ExceptionHandler(value = NotLoginException.class)
+    @ResponseBody
+    public Response<Object> notNotLoginException(HttpServletRequest request, Exception e){
+        return Response.fail(ResponseCodeEnum.UNAUTHORIZED);
+    }
 
 
     /**

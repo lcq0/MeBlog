@@ -9,7 +9,7 @@ import com.quanxiaoha.weblog.common.domain.dos.UserDO;
 import com.quanxiaoha.weblog.common.domain.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -24,18 +24,18 @@ import java.util.Date;
 @Slf4j
 public class AdminUserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements AdminUserService {
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
     @Autowired
     private AdminUserDao userDao;
 
     @Override
     public Response updateAdminPassword(UpdateAdminPasswordReqVO updateAdminPasswordReqVO) {
-        UserDO userDO = UserDO.builder()
-                .password(passwordEncoder.encode(updateAdminPasswordReqVO.getNewPassword()))
-                .updateTime(new Date())
-                .build();
-        userDao.updateAdminPassword(userDO);
+//        UserDO userDO = UserDO.builder()
+//                .password(passwordEncoder.encode(updateAdminPasswordReqVO.getNewPassword()))
+//                .updateTime(new Date())
+//                .build();
+//        userDao.updateAdminPassword(userDO);
         return Response.success();
     }
 }

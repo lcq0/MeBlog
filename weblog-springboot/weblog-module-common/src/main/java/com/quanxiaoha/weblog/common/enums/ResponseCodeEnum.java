@@ -28,6 +28,7 @@ public enum ResponseCodeEnum implements BaseExceptionInterface {
     DUPLICATE_TAG_ERROR("10008", "提交的部分标签已被创建"),
     DUPLICATE_CATEGORY_ERROR("10009", "该分类已被创建"),
     TOKEN_EXPIRED("10010", "Token 已过期"),
+    NOT_PERMISSION("10011", "无访问权限"),
     ;
 
     private String errorCode;

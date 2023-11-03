@@ -28,6 +28,9 @@
         <jjwt.version>0.11.2</jjwt.version>
         <minio.version>8.2.1</minio.version>
         <flexmark.version>0.62.2</flexmark.version>
+        <sa-token.version>1.37.0</sa-token.version>
+        <commons-pool2.version>2.12.0</commons-pool2.version>
+        <knife4j.version>2.0.9</knife4j.version>
 
         <!-- 插件版本 -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -39,7 +42,8 @@
     <modules>
         <module>weblog-module-common</module>
         <module>weblog-module-admin</module>
-        <module>weblog-module-jwt</module>
+        <!--<module>weblog-module-jwt</module>-->
+        <module>weblog-module-sa-token</module>
         <!-- 入口 -->
         <module>weblog-web</module>
     </modules>
@@ -59,9 +63,15 @@
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
-            <dependency>
+            <!--<dependency>
                 <groupId>com.quanxiaoha</groupId>
                 <artifactId>weblog-module-jwt</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>-->
+
+            <dependency>
+                <groupId>com.quanxiaoha</groupId>
+                <artifactId>weblog-module-sa-token</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
@@ -140,6 +150,33 @@
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-spring-boot-starter</artifactId>
+                <version>${sa-token.version}</version>
+            </dependency>
+
+            <!-- Sa-Token 整合 Redis （使用 jackson 序列化方式） -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis-jackson</artifactId>
+                <version>${sa-token.version}</version>
+            </dependency>
+
+            <!-- 提供Redis连接池 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
