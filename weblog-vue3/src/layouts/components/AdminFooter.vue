@@ -1,8 +1,22 @@
 <template>
     <footer class="footer">
-        Copyright © 2023. All rights reserved. Provided by&nbsp;<a class="quanxiaoha" href="https://www.quanxiaoha.com" target="_blank">犬小哈</a>
+        Copyright © 2022 - {{ year }} All rights reserved. Provided by&nbsp;<a class="quanxiaoha" href="https://www.lingcq.online" target="_blank">leone</a>
+        <a class="quanxiaoha" href="https://beian.miit.gov.cn/" target="_blank">&nbsp;粤ICP备19038581号</a>
     </footer>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      year: new Date().getFullYear().toString()
+    };
+  },
+  mounted() {
+    console.log('year:', this.year);
+  }
+};
+</script>
 
 <style scoped>
 .footer {
