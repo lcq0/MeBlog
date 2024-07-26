@@ -19,6 +19,10 @@
     </properties>-->
 
     <dependencies>
+        <dependency>
+            <groupId>com.quanxiaoha</groupId>
+            <artifactId>weblog-module-common</artifactId>
+        </dependency>
         <!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
         <dependency>
             <groupId>cn.dev33</groupId>
