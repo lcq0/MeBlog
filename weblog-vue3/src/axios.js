@@ -17,9 +17,9 @@ instance.interceptors.request.use(function (config) {
     console.log('统一添加 token: ' + token)
 
     // 统一添加请求头 Token
-    if (token) {
-        config.headers['Authorization'] = 'Bearer ' + token
-    }
+    // if (token) {
+    //     config.headers['Authorization'] = 'Bearer ' + token
+    // }
 
     return config;
 }, function (error) {
@@ -30,9 +30,16 @@ instance.interceptors.request.use(function (config) {
 // 添加响应拦截器
 instance.interceptors.response.use(function (response) {
     // 对响应数据做点什么
+    console.log('response='+response)
+    console.log('errorCode='+response.errorCode +' ,message='+response.message)
+    if(response.errorCode == '10002'){
+        console.log('errorCode=10002,message='+response.message)
+        store.dispatch('logout').finally(() => location.reload())
+    }
     return response.data;
 }, function (error) {
     // 对响应错误做点什么
+    console.log('response='+response)
     let status = error.response.status
     console.log('错误响应==========》' + status)
     if (status == 401 || status == 402) {

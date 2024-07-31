@@ -11,3 +11,7 @@ export function getAdminInfo() {
 export function updateAdminPassword(data) {
     return axios.post("/admin/password/update", data)
 }
+
+export function logout() {
+    return axios.post("/admin/logout")
+}

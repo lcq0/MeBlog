@@ -1,6 +1,7 @@
 import { useCookies } from '@vueuse/integrations/useCookies'
 
-const TOKEN_KEY = 'Authorization'
+// const TOKEN_KEY = 'Authorization'
+const TOKEN_KEY = 'blog-token'
 const cookie = useCookies()
 
 // 获取 Token

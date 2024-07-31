@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import { getAdminInfo } from '@/api/admin/user'
+import { getAdminInfo,logout } from '@/api/admin/user'
 import { getBlogSettingDetail } from '@/api/frontend/blogsetting'
 import { removeToken } from '@/composables/auth'
 import { useRouter } from 'vue-router'
@@ -60,6 +60,7 @@ const store = createStore({
         },
         logout({ commit }) {
             removeToken()
+            logout()
             // 删除当前全局的 user 状态
             commit('SET_USERINFO', {})
         }

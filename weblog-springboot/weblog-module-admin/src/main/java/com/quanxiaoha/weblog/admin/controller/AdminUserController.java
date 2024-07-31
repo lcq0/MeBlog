@@ -64,15 +64,8 @@ public class AdminUserController {
         String username = jsonNode.get("username").textValue();
         String password = jsonNode.get("password").textValue();
         Optional<UserDO> user = userService.lambdaQuery().eq(UserDO::getUsername, username).oneOpt();
-        // 此处仅作模拟示例，真实项目需要从数据库中查询数据进行比对
-//        if (!user.isPresent()) {
-//            return Response.fail("login fail, user not exist");
-//        }
-//        if (!user.get().getPassword().equals(password)) {
-//            return Response.fail("login fail, password error");
-//        }
         if(user.isPresent() && passwordEncoder.matches(password, user.get().getPassword())) {
-            StpUtil.login(user.get().getId());
+            StpUtil.login("admin_" + user.get().getId());
             return Response.success(StpUtil.getSession().getTokenSignList().get(0).getValue());
         }
         return Response.fail("login fail, username or password error");

@@ -97,7 +97,7 @@ const onSubmit = () => {
                     showMessage('登录成功', 'success')
                     // notification('登录成功')
 
-                    let token = res.data.token
+                    let token = res.data
                     // 存储 token
                     setToken(token)
 
