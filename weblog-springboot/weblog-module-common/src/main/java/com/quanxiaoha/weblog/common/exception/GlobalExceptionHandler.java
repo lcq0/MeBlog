@@ -9,11 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.security.access.AccessDeniedException;
 //import org.springframework.security.core.AuthenticationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 //import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.servlet.http.HttpServletRequest;
@@ -95,6 +97,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = NotPermissionException.class)
     @ResponseBody
+//    @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public Response<Object> notPermissionException(HttpServletRequest request, Exception e){
         log.error("{} request error, ", request.getRequestURI(), e);
         return Response.fail(ResponseCodeEnum.NOT_PERMISSION);
@@ -102,6 +105,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = NotLoginException.class)
     @ResponseBody
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public Response<Object> notNotLoginException(HttpServletRequest request, Exception e){
         return Response.fail(ResponseCodeEnum.UNAUTHORIZED);
     }

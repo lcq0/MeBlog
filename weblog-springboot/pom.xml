@@ -31,6 +31,7 @@
         <sa-token.version>1.37.0</sa-token.version>
         <commons-pool2.version>2.12.0</commons-pool2.version>
         <knife4j.version>2.0.9</knife4j.version>
+        <hutool.version>5.8.25</hutool.version>
 
         <!-- 插件版本 -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -43,7 +44,7 @@
         <module>weblog-module-common</module>
         <module>weblog-module-admin</module>
         <!--<module>weblog-module-jwt</module>-->
-        <module>weblog-module-sa-token</module>
+        <!--<module>weblog-module-sa-token</module>-->
         <!-- 入口 -->
         <module>weblog-web</module>
     </modules>
@@ -69,11 +70,11 @@
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>-->
 
-            <dependency>
+            <!--<dependency>
                 <groupId>com.quanxiaoha</groupId>
                 <artifactId>weblog-module-sa-token</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
-            </dependency>
+            </dependency>-->
 
             <dependency>
                 <groupId>com.quanxiaoha</groupId>
@@ -175,6 +176,13 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
 
         </dependencies>

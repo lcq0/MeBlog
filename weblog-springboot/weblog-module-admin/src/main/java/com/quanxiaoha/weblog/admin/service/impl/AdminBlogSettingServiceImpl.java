@@ -1,5 +1,6 @@
 package com.quanxiaoha.weblog.admin.service.impl;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.quanxiaoha.weblog.admin.model.vo.blogsetting.QueryBlogSettingRspVO;
 import com.quanxiaoha.weblog.admin.model.vo.blogsetting.UpdateBlogSettingReqVO;
@@ -66,7 +67,7 @@ public class AdminBlogSettingServiceImpl extends ServiceImpl<BlogSettingMapper, 
     public Response<QueryUserDetailRspVO> queryNicknameAndAvatar() {
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //        String username = authentication.getName();
-        String username = "test";
+        String username = "user";
 
         QueryUserDetailRspVO queryBlogSettingRspVO = QueryUserDetailRspVO.builder().username(username).build();
 
